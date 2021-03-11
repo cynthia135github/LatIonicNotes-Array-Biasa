@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DETAIL NOTE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color:#f0c5ef;padding:5px;" *ngFor="let a of arrNote; let i = index">
+    <div style="float:left; width:50%;">
+      {{a[0]}} / {{a[2]}}
+      <br/><br/>{{a[1]}}
+    </div>
+  
+    <div style="float:left; width:15%;margin-left:10px;">
+        <img *ngIf="a[3] == 0" (click)="fav(i)" src="https://icons-for-free.com/iconfiles/png/512/heart-131965017458786724.png" style="width: 20px; height: 20px;" alt="image">
+  
+        <img *ngIf="a[3] == 1" (click)="fav(i)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/240px-Heart_coraz%C3%B3n.svg.png" style="width: 20px; height: 20px;" alt="image">
+  
+    </div>
+
+    <div style="clear:both"></div>
+  
+    <br/>
+  
+  </div>
+  
+  <br/><br/>
+
+  <ion-row>
+		<ion-col size="6">
+      <ion-button (click)="GoToAdd()" size="small" color="success" fill="solid" expand="block">New Note</ion-button>
+    </ion-col>
+  	<ion-col size="6">
+      <ion-button size="small" color="secondary" fill="solid" expand="block" (click)="GoToFav()" >Favorite Note</ion-button>
+    </ion-col>
+  </ion-row>
+
+      
+</ion-content>

@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-title>
-      Blank
+      ADD NOTE
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="warning">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-item color="warning">
+    <ion-input type="text" [(ngModel)]="txtJudul" placeholder="Judul"></ion-input>
+  </ion-item>
+  <ion-item color="warning">
+    <ion-input type="text" [(ngModel)]="txtIsi" placeholder="Isi Note"></ion-input>
+  </ion-item>
+  <ion-item color="warning">  
+    <ion-datetime value="2021-03-09" [(ngModel)]="txtTgl" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+
+  <ion-button (click)="AddNote()" style="margin-left: 20px;margin-right: 20px;" size="small" color="success" fill="solid" expand="block">Add Note</ion-button>
+
+  <ion-row>
+		<ion-col size="6">
+      <ion-button (click)="GoToDetail()" size="small" color="primary" fill="solid" expand="block">Detail Note</ion-button>
+    </ion-col>
+  	<ion-col size="6">
+      <ion-button (click)="GoToFav()" size="small" color="secondary" fill="solid" expand="block">Favorite Note</ion-button>
+    </ion-col>
+  </ion-row>
+  </ion-content>
